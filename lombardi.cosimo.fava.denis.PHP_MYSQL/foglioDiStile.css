@@ -1,0 +1,297 @@
+
+div.ButtonContainer {
+    width : 200%;
+    height : 70%;
+    background : none;
+    position : relative;
+    top : 30%;
+    left : 40%;
+    }
+    body.blackBody {
+    background-color : black;
+    text-decoration-color : white;
+    }
+    img.logo {
+    position : relative;
+    width : 50%;
+    height : 50%;
+    align-self : center;
+    }
+    div.center {
+    position : relative;
+    text-align : center;
+    color:white;
+    }
+    
+    h1#whiteText {
+    color : white;
+    }
+
+    img.gif{
+      position:relative;
+      width:20%;
+      height:30%;
+      float:left;
+    }
+    p.underlined{
+        color:white;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    div.colonna {
+    width : 25%;
+    margin-left : 5%;
+    }
+    button.simpleButton {
+    background-color : #04AA6D;
+    position : relative;
+    display : block;
+    border-style : solid;
+    border-color : red;
+    color : white;
+    padding : 1% 2%;
+    text-align : center;
+    text-decoration : none;
+    font-size : 100%;
+    width : 15%;
+    height : 40%;
+    margin : 1%;
+    float : left;
+    }
+    .simpleButton:hover{
+      cursor:pointer;
+    }
+    
+    div.colonnaGrande {
+    float : left;
+    width : 40%;
+    margin : 5%;
+    color : white;
+    }
+   
+    p.testoSemplice {
+    text-align : justify;
+    font-family : Arial, Helvetica, sans-serif;
+    font-style : normal;
+    color : white;
+    }
+    
+    h1.h {
+    position : relative;
+    right : -22.5%;
+    color : white;
+    }
+    img.Image {
+    width : 50%;
+    height : 75%;
+    }
+    div.footer {
+    position : fixed;
+    left : 37.5%; 
+    align-items : center;
+    bottom : 0%;
+    width : 25%;
+    color : white;
+    text-align : center;
+    background-color : green;
+    }
+    p.para {
+    color : white;
+    }
+    
+    .input {
+    position : relative;
+    width : 25%;
+    height : 25%;
+    }
+    button.simpleButton1 {
+    background-color : #04AA6D;
+    position : relative;
+    display : block;
+    border-style : solid;
+    border-color : red;
+    color : white;
+    padding : 1% 2%;
+    text-align : center;
+    text-decoration : none;
+    font-size : 100%;
+    width : 10%;
+    height : 10%;
+    margin : 1%;
+    left : 44%;
+    }
+    .simpleButton1:hover{
+      cursor:pointer;
+    }
+    button.hpButton {
+    background-color : #04AA6D;
+    position : fixed;
+    display : block;
+    border-style : solid;
+    border-color : red;
+    color : white;
+    padding : 1% 2%;
+    text-align : center;
+    text-decoration : none;
+    font-size : 100%;
+    width : 20%;
+    height : 40%;
+    margin : 1%;
+    }
+
+    div.colonnaIdi3{
+        float:left;
+        width: 30%;
+        margin:1%;
+        text-align : justify;
+        color : white;
+
+    }
+
+    img#imageCamper{
+        width: 100%;
+        height:70%;
+    }
+
+    table#priceTable{
+        
+        color:white;
+        border-style: solid;
+        border-color: white;
+
+    }
+
+    img#gmapsImage{
+        width: 45%;
+        height: 45%;
+    }
+
+    #gmapsImage:hover{
+      width:55%;
+      height:55%;
+    }
+
+    a.customLink{
+        color:white;
+        text-decoration: none;
+    }
+
+    a.customLink:visited{
+        color:white;
+    }
+
+    a.customLink{
+        color:white;
+    }
+
+    p#simple{
+        text-align: center;
+        color:white;
+    }
+
+    img.camper{
+      position: relative;
+        width:45%;
+        height:30%;
+    }
+
+    .camper:hover{ 
+      width:55%;
+      height:40%;
+    }
+
+    
+      .slider_container {
+        position: relative;
+        width: 50%;
+        height: 40%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        overflow: hidden;
+        animation-play-state: running;
+        align-items: center; left:25%; 
+        
+      }
+      .slider {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        animation: 30s cubic-bezier(1, 0.95, 0.565, 1) sliding infinite;
+        width: 100%;
+        height: 100%;
+        
+        
+      }
+      .slide {
+        position: relative;
+        min-width: 100%;
+        height: 100%; 
+        
+      }
+      .slide img {
+        width: 100%;
+        height: 100%;
+      }
+      .slide .caption {
+        position: relative;
+        left: 0;
+        bottom: 5%;
+        font-size: 300%;
+        font-weight: 600%;
+        color: white;
+        text-transform: capitalize;
+        background: rgba(0, 0, 0, 0.348);
+        backdrop-filter: blur(10px);
+        padding: 1rem 5rem;
+        border-radius: 0 2rem 2rem 0;
+      }
+      .slide.one {
+        background: rgb(182, 19, 109);
+      }
+      .slide.two {
+        background: rgb(255, 64, 64);
+      }
+      .slide.three {
+        background: rgb(11, 173, 188);
+      }
+      .slide.four {
+        background: rgb(11, 188, 14);
+      }
+
+      .slide.five {
+        background: rgb(19, 183, 13);
+      }
+      
+      @keyframes sliding {
+        0% {
+          transform: translateX(0%);
+        }
+        20% {
+          transform: translateX(0%);
+        }
+        25% {
+          transform: translateX(-100%);
+        }
+        45% {
+          transform: translateX(-100%);
+        }
+        50% {
+          transform: translateX(-200%);
+        }
+        70% {
+          transform: translateX(-200%);
+        }
+        75% {
+          transform: translateX(-300%);
+        }
+        95% {
+          transform: translateX(-300%);
+        }
+        100% {
+          transform: translateX(-400%);
+        }
+      }
+      
