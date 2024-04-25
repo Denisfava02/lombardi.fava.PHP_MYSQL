@@ -63,11 +63,25 @@ div.ButtonContainer {
     }
     
     div.colonnaGrande {
+      position:relative;
     float : left;
     width : 40%;
     margin : 5%;
     color : white;
     }
+
+    div.colonnaGrandeScroll{
+      overflow-y: scroll;
+      float : left;
+    width : 30%;
+    margin : 2%;
+    color : white;
+    position:flex;
+    border-style: solid;
+    border-color: aqua;
+    max-height: 500px;
+  }
+    
    
     p.testoSemplice {
     text-align : justify;

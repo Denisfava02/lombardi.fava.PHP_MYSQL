@@ -12,7 +12,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 <body class="blackBody">
     <div class="center">
         <a href="homepage.html"><img class="logo" src="europark.PNG" alt="Europark logo" /></a>
-        <form action="reservedArea.php" method="post">
+        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
             <div>
         <p class="para">Username:</p>
         <input class="input" type="text" name="username" />
@@ -28,6 +28,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     <div class="footer">&copy; Centro Caravan Europark 2023</div>
 
     <?php
+
 require_once "connection.php";
 if(isset($_POST["username"]) && isset($_POST["password"])){
     $nome_utente = $_POST["username"];

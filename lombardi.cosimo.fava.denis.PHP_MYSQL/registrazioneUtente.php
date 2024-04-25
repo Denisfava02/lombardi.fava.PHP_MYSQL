@@ -1,4 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <?php
 
 if(isset($_POST['password']))
@@ -13,6 +20,7 @@ else $username="";
 ?>
 
 <?php
+echo "<div class='center'><a href='homepage.html'><img class='logo' src='europark.PNG' alt='Europark logo' /></a></div>";
 echo "<div class='center'><h1 style='color:white'>Inserisci nome utente e password</h1></div>";
         if(isset($_POST['r'])){
             if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['passwordC'])){
@@ -87,20 +95,16 @@ echo "<div class='center'><h1 style='color:white'>Inserisci nome utente e passwo
     
     
     }
-        echo "<?xml version='1.0' encoding='UTF-8'?>";
+        //echo "<?xml version='1.0' encoding='UTF-8';
     
         ?>
-<!DOCTYPE html
-PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
 <head><title>Registrazione Utente</title>
 <link rel="stylesheet" href="foglioDiStile.css " type="text/css" /></head>
 <body class="blackBody">
+
     <div class="center">
         
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method = "post">
@@ -115,6 +119,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         
         </form>
     </div>
+    <div class="footer">&copy; Centro Caravan Europark 2023</div>
 </body>
 
 </html>
