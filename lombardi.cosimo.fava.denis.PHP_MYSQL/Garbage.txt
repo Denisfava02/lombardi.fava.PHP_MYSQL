@@ -1,0 +1,206 @@
+<!--<select name="valutazione" id="valutazione">
+                    <option value="1" <?php //if (isset($example) && $example=="1")echo "selected";?>>1 STELLA
+                    </option>
+                    <option value="2" <?php //if (isset($example) && $example=="2")echo "selected";?>>2 STELLE </option>
+                    <option value="3">3 STELLE</option>
+                    <option value="4">4 STELLE</option>
+                    <option value="5">5 STELLE</option>-->
+
+
+
+$opzioni = array("1 Stella", "2 Stelle", "3 Stelle", "4 Stelle","5 Stelle");
+
+if(isset($_POST['val']) )
+// Valore selezionato
+$valutazione = $_POST['val']; // Questo valore deve essere presente nell'array $options
+else $valutazione = "1 Stella"
+?>
+
+
+<select name="val">
+    <?php
+    // Ciclo attraverso le opzioni
+    foreach ($opzioni as $opzione) {
+        // Verifica se l'opzione corrente è uguale a quella selezionata
+        if ($opzione == $valutazione) {
+            // Se sì, aggiungi l'attributo "selected"
+            echo "<option value='$opzione' selected>$opzione</option>";
+        } else {
+            // Altrimenti, stampa normalmente senza "selected"
+            echo "<option value='$optione'>$optione</option>";
+        }
+    }
+    ?>
+
+<!--<select name = "el">
+                 <?php
+                    $sql1 = "  select  id,nomeUtenteAssociato,data from recensioni";
+                    $result1 = mysqli_query($conn,$sql1); 
+                    while ($row = mysqli_fetch_array($result1)){
+                        
+                        echo "<option value=\"". $row['id']." ".$row['nomeUtenteAssociato']." ".$row['data']."\">".$row['id']." ".$row['nomeUtenteAssociato']." ".$row['data']."</option> \n";
+                    }
+                    ?></select></div>-->
+
+
+
+recensioni.php real
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<?php
+session_start();
+if(!isset($_SESSION['username'])){
+    require_once "logout.php";
+    header("Location: reservedArea.php");}
+     
+?>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head><title>Recensioni</title>
+        <link rel="stylesheet" href="foglioDiStile.css " type="text/css" /></head>
+    <body class="blackBody">
+        <div class="center"><a href="homepage.html"><img class="logo" src="europark.PNG" alt="Europark logo" /></a></div>
+        <div class="center">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+                <div>
+                <?php
+                if(isset($_POST['contenuto'])&&empty($_POST['contenuto'])){
+                    echo "<div class='center'><p class='para'>Attenzione! Devi inserire il contenuto</p></div>";
+                }else{
+                    if(isset($_POST['valutazione']) ){
+                        $val = $_POST['valutazione'];
+                        $recensione = $_POST['contenuto'];
+                        $user = $_SESSION['username'];
+
+                        require_once "connection.php";
+                        $sql = "insert into recensioni(valutazione,contenuto,nomeUtenteAssociato,data) values($val,'$recensione','$user',now())";
+                        $result=mysqli_query($conn, $sql);
+                        if($result)
+                        echo "<div class='center'><p class='para'>Inserimento riuscito!</p></div>";
+                        else
+                        echo "<div class='center'><p class='para'>Inserimento non riuscito!</p></div>";
+                    }
+                }
+                ?>
+      
+                <label>Valutazione(da 1 a 5 stelle):</label><br />
+
+                <?php
+                if(isset($_POST['valutazione'])) $val = $_POST['valutazione'];
+                else $val = "";
+                ?>
+                
+                
+                <select name="valutazione">
+         <option value="1" <?php if(isset($_POST['valutazione']) && $_POST['valutazione'] == 1) echo 'selected="selected"'; ?>>1 STELLA</option>
+         <option value="2" <?php if(isset($_POST['valutazione']) && $_POST['valutazione'] == 2) echo 'selected="selected"'; ?>>2 STELLE</option>
+         <option value="3" <?php if(isset($_POST['valutazione']) && $_POST['valutazione'] == 3) echo 'selected="selected"'; ?>>3 STELLE</option>
+         <option value="4" <?php if(isset($_POST['valutazione']) && $_POST['valutazione'] == 4) echo 'selected="selected"'; ?>>4 STELLE</option>
+         <option value="5" <?php if(isset($_POST['valutazione']) && $_POST['valutazione'] == 5) echo 'selected="selected"'; ?>>5 STELLE</option>
+         </select>
+          <?php //echo $_POST["valutazione"]; di debug
+          if(isset($_POST['valutazione']))
+          $val = $_POST['valutazione']?>
+
+
+          </select>
+               
+                </select><br /><br />
+                <label>Recensione:</label><br />
+                <textarea name="contenuto" id="contenuto" cols="100" rows="50"></textarea><br /><br />
+                
+                
+                <button class="simpleButton1" type="submit">Invia Recensione</button>
+                
+                
+            
+            </form>
+            
+            </div>
+            <a href="logout.php" class="customLink"> <button class="simpleButton1" type="submit" name="lo">
+            Logout</button></a>
+             
+
+
+        </div>
+        <div class="footer">&copy; Centro Caravan Europark 2023</div>
+        
+    </body>
+</html>
+
+
+DiconoDiNoi.php
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <title>Dicono su di noi</title>
+    <link rel="stylesheet" href="foglioDiStile.css " type="text/css" /></head>
+
+<body class="blackBody">
+    <div class="center"><a href="homepage.html"><img class="logo" src="europark.PNG" alt="Europark logo" /></a></div>
+    <div class="colonnaGrande">
+        <h1>Ringraziamenti</h1>
+        <p class="testoSemplice">Alla vostra destra potete trovare alcune recensioni 
+            lasciate da nostri clienti, tutto lo staff del <strong>Centro Caravan Europark</strong>
+            vi ringrazia per le belle parole lasciate nei nostri confronti!
+            <strong>Se anche tu vuoi lasciare una recensione clicca sul camper qui sotto</strong>
+        </p>
+        <div>
+        <a href="recensioni.php"><img class="camper" src="camper.png" alt="camper felice" /></a></div>
+        
+    </div>
+    <div class="colonnaGrandeScroll">
+        <?php require_once "connection.php";
+    $sql = "select * from recensioni where valutazione>= 3";
+                    $result = mysqli_query($conn,$sql);
+                    if($result){
+                        while($row = mysqli_fetch_array($result)){
+                            
+                            echo "<p class='testoSemplice'><strong>Nome :</strong> ".$row['nomeUtenteAssociato']."</p>";
+                            echo "<p class='testoSemplice'><strong>Valutazione:</strong> ".$row['valutazione']."STELLA/E"."</p>";
+                            echo "<p class='testoSemplice'><strong>Contenuto:</strong> ".$row['contenuto']."</p>";
+                            echo "<p class='testoSemplice'><strong>Data:</strong> ".$row['data']."</p>";
+                            echo "<hr />";
+
+                        }
+                    }?>
+    </div>  
+    
+    <div class="footer">&copy; Centro Caravan Europark 2023</div>
+
+</body>
+</html>
+
+
+install.php
+$host="localhost";
+$username_1="root";
+$pass="admin";
+
+
+$sql = "create database rimessaggioCopy";
+$conn=mysqli_connect($host, $username_1, $pass);
+$result = mysqli_query($conn,$sql);
+if(!$result) echo "error";
+
+$sql = "use database rimessaggioCopy";
+$result = mysqli_query($conn,$sql);
+if(!$result) echo "error";
+
+$sql = "create table utenti( id int not null auto_increment, username varchar(100) not null,password varchar(100) not null,ruolo int not null, primary key(id))";
+$result = mysqli_query($conn,$sql);
+if(!$result) echo "error";
+$sql ="create table recensioni(id int not null auto_increment,valutazione int not null,contenuto varchar(15000),nomeUtenteAssociato varchar(100) not null, primary key(id))";
+$result = mysqli_query($conn,$sql);
+if(!$result) echo "error";
