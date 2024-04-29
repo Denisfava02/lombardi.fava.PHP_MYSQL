@@ -47,7 +47,7 @@ echo "<div class='center'><h1 style='color:white'>Inserisci nome utente e passwo
 
                         require_once "connection.php";
 
-                        $sql="insert into utenti(username,password,ruolo) values('$username','$passw',2)";
+                       /* $sql="insert into utenti(username,password,ruolo) values('$username','$passw',2)";
                         $result = mysqli_query($conn,$sql);
                         if($result){
                             session_start();
@@ -61,7 +61,34 @@ echo "<div class='center'><h1 style='color:white'>Inserisci nome utente e passwo
                             $pass1=$_POST['passwordC'];
                             $username="";
 
+                        }*Questo if funziona solo in versioni di php dove sono disabilitate le eccezioni */
+                        
+                        /*Abbiamo inserito questo costrutto try catch per poter gestire al meglio l'eventualità che quel 
+                        nome utente sia già presente nel db, se $result === false allora verrè lanciata e gestita un'eccezzione
+                        di tipo mysqli_sql_exception */
+                        try{$sql="insert into utenti(username,password,ruolo) values('$username','$passw',2)";
+                            $result = mysqli_query($conn,$sql);
+                            if($result){
+                                session_start();
+                                    $_SESSION['username']=$username;
+                                    $_SESSION['password']=$pass;
+                                       header("Location:recensioni.php");
+    
+                            }else{throw new mysqli_sql_exception;} //istruzione "paranoica" per chi non ha la gestione delle eccezioni attiva
+                                
+
+                        }catch(mysqli_sql_exception $e){
+
+                            echo "<div class='center'><p class='para'>Attenzione!Cambiare username</p></div>";
+                            $passw=$_POST['password'];
+                            $pass1=$_POST['passwordC'];
+                            $username="";
+
                         }
+
+                       
+
+                       
                         
 
                     }
