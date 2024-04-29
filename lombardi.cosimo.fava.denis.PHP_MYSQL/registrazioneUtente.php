@@ -64,7 +64,7 @@ echo "<div class='center'><h1 style='color:white'>Inserisci nome utente e passwo
                         }*Questo if funziona solo in versioni di php dove sono disabilitate le eccezioni */
                         
                         /*Abbiamo inserito questo costrutto try catch per poter gestire al meglio l'eventualità che quel 
-                        nome utente sia già presente nel db, se $result === false allora verrè lanciata e gestita un'eccezzione
+                        nome utente sia già presente nel db, se $result === false allora verrà lanciata e gestita un'eccezzione
                         di tipo mysqli_sql_exception */
                         try{$sql="insert into utenti(username,password,ruolo) values('$username','$passw',2)";
                             $result = mysqli_query($conn,$sql);
