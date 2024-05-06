@@ -1,7 +1,11 @@
 <?php
-$host="localhost";
+/*$host="localhost";
 $username_1="root";
-$pass="admin";
+$pass="admin";*/
+
+require_once "AccountSettings.php";
+
+
 $db="rimessaggio";
 
 

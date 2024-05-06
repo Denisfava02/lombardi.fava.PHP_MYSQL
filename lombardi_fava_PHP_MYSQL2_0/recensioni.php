@@ -17,8 +17,14 @@ if(!isset($_SESSION['username'])){
     <head><title>Recensioni</title>
         <link rel="stylesheet" href="foglioDiStile.css " type="text/css" /></head>
     <body class="blackBody">
-        <div class="center"><a href="homepage.html"><img class="logo" src="europark.PNG" alt="Europark logo" /></a></div>
+    
+    
+
+    <div class='center'><a href='homepage.php'><img class='logo' src='europark.PNG' alt='Europark logo' /></a>
+
+  
         <div class="center">
+            
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                 <div>
                 <?php
@@ -75,8 +81,11 @@ if(!isset($_SESSION['username'])){
             </form>
             
             </div>
-            <a href="logout.php" class="customLink"> <button class="simpleButton1" type="submit" name="lo">
-            Logout</button></a>
+            <div class='center'><div class='buttonContainer'><div><img class='gif' src='camperWithAuto.gif' alt='nice gif' />
+        </div><div class='center'><a href='info.php'><button class='simpleButton'>Informazioni</button></a>
+        <a href='leFigure.php'><button class='simpleButton'>Le figure di riferimento</button></a>
+        <a href='DiconoDiNoi.php'><button class='simpleButton'>Dicono di noi</button></a>
+        <a href="logout.php"><button class='simpleButton'>Logout</button></a></div></div> </div>
              
 
 
