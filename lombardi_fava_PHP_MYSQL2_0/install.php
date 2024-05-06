@@ -1,10 +1,14 @@
 <?php
 
-$host ="localhost";
+/*$host ="localhost";
 $user = "root";
-$password = "admin";
+$password = "admin";*/
 
-$connessione = new mysqli($host,$user,$password);
+require_once "AccountSettings.php";
+
+$password = $pass;
+
+$connessione = new mysqli($host,$username_1,$password);
 
 if($connessione === false){
     die("Errore di connesione:".$connessione->connect_error);

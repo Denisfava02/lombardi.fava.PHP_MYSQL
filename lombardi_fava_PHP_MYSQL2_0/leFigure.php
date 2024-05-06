@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+     
+?>
+
+
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE html
@@ -15,7 +22,18 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 
 <body class="blackBody">
     
-    <div class="center"><a href="homepage.html"><img class="logo" src="europark.PNG" alt="Europark logo" /></a></div>
+<?php 
+
+if(isset($_SESSION['username'])){
+    
+
+echo "<div class='center'><a href='homepage.php'><img class='logo' src='europark.PNG' alt='Europark logo' /></a><div class='center'><p='para'>Benvenuto ".$_SESSION['username']." "."</p></div><div class='buttonContainer'><div><img class='gif' src='camperWithAuto.gif' alt='nice gif' /></div><div class='center'><a href='info.php'><button class='simpleButton'>Informazioni</button></a><a href='leFigure.php'><button class='simpleButton'>Le figure di riferimento</button></a><a href='DiconoDiNoi.php'><button class='simpleButton'>Dicono di noi</button></a><a href='logout.php'> <button class='simpleButton' type='submit' name='lo'>Logout</button></a></div></div> </div>";
+
+}else{
+
+echo "<div class='center'><a href='homepage.php'><img class='logo' src='europark.PNG' alt='Europark logo' /></a><div class='buttonContainer'><div><img class='gif' src='camperWithAuto.gif' alt='nice gif' /></div><div class='center'><a href='reservedArea.php'><button class='simpleButton'>Login</button></a><a href='info.php'><button class='simpleButton'>Informazioni</button></a><a href='leFigure.php'><button class='simpleButton'>Le figure di riferimento</button></a><a href='DiconoDiNoi.php'><button class='simpleButton'>Dicono di noi</button></a></div></div> </div>";
+
+} ?>
     
     <div class="colonnaGrande">
         <h1 >Antonio Lombardi</h1>

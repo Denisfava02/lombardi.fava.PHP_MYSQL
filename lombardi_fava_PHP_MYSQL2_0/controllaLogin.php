@@ -30,7 +30,7 @@ if($conta==1){
         session_start();
         $_SESSION['username'] = $nome_utente;
         $_SESSION['password'] = $passmd5;
-        header("Location: recensioni.html");
+        header("Location: homepage.php");
     }
 
 } else {

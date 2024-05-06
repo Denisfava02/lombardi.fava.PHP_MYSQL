@@ -1,6 +1,6 @@
 Il Gruppo � composto da: LOMBARDI COSIMO - FAVA DENIS
 LINK GIT REPOSITORY: https://github.com/CosimoLombo02/lombardi.fava.PHP_MYSQL
-https://github.com/Denisfava02/lombardi.fava.PHP_MYSQL
+https://github.com/Denisfava02/cosimo.lombardi.fava.denis.XHTML_CSS //aggiungi il tuo link
 Sulla base del primo homework sono state introdotte varie funzionalità con php e mysql,
 il db è semplicemente composto da due tabelle, una per gli utenti ed una per le recensioni.
 Ci sono due tipi di utenti, admin(con ruolo 1) e utenti normali(ruolo 2). Gli utenti per poter

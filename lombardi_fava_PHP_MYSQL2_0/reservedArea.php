@@ -11,7 +11,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     <link rel="stylesheet" href="foglioDiStile.css " type="text/css" /></head>
 <body class="blackBody">
     <div class="center">
-        <a href="homepage.html"><img class="logo" src="europark.PNG" alt="Europark logo" /></a>
+        <a href="homepage.php"><img class="logo" src="europark.PNG" alt="Europark logo" /></a>
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
             <div>
         <p class="para">Username:</p>
@@ -60,7 +60,7 @@ if($conta==1){
         session_start();
         $_SESSION['username'] = $nome_utente;
         $_SESSION['password'] = $passmd5;
-        header("Location: recensioni.php");
+        header("Location: homepage.php");
     }
 
 } else {

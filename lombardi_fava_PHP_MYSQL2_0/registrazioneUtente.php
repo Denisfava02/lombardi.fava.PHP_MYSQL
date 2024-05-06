@@ -72,7 +72,7 @@ echo "<div class='center'><h1 style='color:white'>Inserisci nome utente e passwo
                                 session_start();
                                     $_SESSION['username']=$username;
                                     $_SESSION['password']=$pass;
-                                       header("Location:recensioni.php");
+                                       header("Location:homepage.php");
     
                             }else{throw new mysqli_sql_exception;} //istruzione "paranoica" per chi non ha la gestione delle eccezioni attiva
                                 
