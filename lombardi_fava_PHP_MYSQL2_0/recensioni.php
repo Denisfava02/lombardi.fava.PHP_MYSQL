@@ -28,6 +28,7 @@ if(!isset($_SESSION['username'])){
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                 <div>
                 <?php
+                echo "<div class='center'><p class='para'>Benvenuto ".$_SESSION['username']."</p></div>";
                 if(isset($_POST['contenuto'])&&empty($_POST['contenuto'])){
                     echo "<div class='center'><p class='para'>Attenzione! Devi inserire il contenuto</p></div>";
                 }else{
